@@ -16,7 +16,7 @@
 
   networking.hostName = "DijkNix"; # Define your hostname.
   # Pick only one of the below networking options.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
   networking.timeServers = [ "nl.pool.ntp.org" ];
 
@@ -46,7 +46,6 @@
   };
 
   security.sudo.wheelNeedsPassword = true;
-
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -141,14 +140,14 @@
   nixpkgs.config.allowUnfree = true;
 
   nix = {
-        settings.auto-optimise-store = true;
-	gc = {
-	  automatic = true;
-	  dates = "weekly";
-	  options = "--delete-older-than 7d";
-	};
-	package = pkgs.nix;
-	settings.experimental-features = [ "nix-command" "flakes" ];
+    settings.auto-optimise-store = true;
+	  gc = {
+	    automatic = true;
+	    dates = "weekly";
+	    options = "--delete-older-than 7d";
+	  };
+	  package = pkgs.nix;
+	  settings.experimental-features = [ "nix-command" "flakes" ];
 	};
 
   # Copy the NixOS configuration file and link it from the resulting system
@@ -175,6 +174,4 @@
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "23.11"; # Did you read the comment?
-
 }
-

@@ -5,10 +5,9 @@
 	home.stateVersion = "23.11";
 	home.packages = with pkgs; [
    		w3m
-		dconf
   	];
 	
-	  programs.git = {
+  programs.git = {
     enable = true;
     userEmail = "edward@edwardijk.nl";
     userName = "Edward Dijk";
@@ -52,15 +51,6 @@
       color_theme = "gruvbox_dark";
       theme_background = false;
     };
-  };
-  
-  programs.thefuck = {
-    enable = true;
-    enableInstantMode = true;
-  };
-
-  programs.wofi = {
-    enable = true;
   };
 
   programs.firefox = {
