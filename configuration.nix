@@ -87,6 +87,7 @@
      isNormalUser = true;
      extraGroups = [ "wheel" "input" ]; # Enable ‘sudo’ for the user.
      description = "Edward Dijk";
+     hashedPassword = "$6$zwpADXuBZW.TrsZc$k82uFvhoeJ9/ir.ktaXo09CtJYYcfQTEFuBpdEaYepWvlxteRjO6w0KhphKbjBmM04xTXu7d9izGTSlUzr3ZK/";
   #   packages = with pkgs; [
   #     firefox
   #     tree
