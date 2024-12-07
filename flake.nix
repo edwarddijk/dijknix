@@ -9,9 +9,24 @@
 
   outputs = inputs@{ nixpkgs, home-manager, ... }: {
     nixosConfigurations = {
+	    dijkstation  = inputs.nixpkgs.lib.nixosSystem {
+      	    system = "x86_64-linux";
+	    modules = [
+	    	    ./hardware/dijkstation.nix
+		    ./configuration.nix
+		    home-manager.nixosModules.home-manager
+		    {
+		      home-manager.useGlobalPkgs = true;
+		      home-manager.useUserPackages = true;
+		      home-manager.users.edward = import ./home.nix;
+		    }
+	            ];
+            };
+
 	    proxmox  = inputs.nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
+      	    system = "x86_64-linux";
 	    modules = [ 
+	            ./hardware/proxmox.nix
 		    ./configuration.nix
 		    home-manager.nixosModules.home-manager
 		    {
