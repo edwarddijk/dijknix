@@ -94,6 +94,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     dconf
+    tpm2-tss
    ];
 
   # OpenGL
