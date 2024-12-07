@@ -64,7 +64,7 @@
   programs.home-manager.enable = true;
   
   qt.enable = true;
-  qt.platformTheme = "gtk";
+  qt.platformTheme.name = "gtk";
   qt.style.name = "arc-dark";
   qt.style.package = pkgs.arc-kde-theme;
 
