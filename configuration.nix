@@ -42,7 +42,7 @@
 
   security.sudo.wheelNeedsPassword = true;
 
-  
+  services.xserver.enable = true;  
   services.displayManager = {
   	defaultSession = "plasma";
 	sddm = {
