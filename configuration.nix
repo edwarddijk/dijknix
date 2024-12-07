@@ -42,11 +42,17 @@
 
   security.sudo.wheelNeedsPassword = true;
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-  services.displayManager.sddm.enable = true;
+  
+  services.displayManager = {
+  	defaultSession = "plasma";
+	sddm = {
+		enable = true;
+		}:
+	}:
 
-  services.xserver.desktopManager.plasma5.enable = true;
+  services.desktopManager.plasma6 = {
+  	enable = true;
+	};
 
   # services.tlp.enable = true;
   services.chrony.enable = true;
@@ -100,6 +106,7 @@
   # OpenGL
   hardware.graphics = {
     enable = true;
+    enable32Bit = true;
   };
 
   # Some programs need SUID wrappers, can be configured further or are
