@@ -6,7 +6,14 @@
 	home.packages = with pkgs; [
    		w3m
   	];
-	
+
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    autocd = true;
+    completionInit = "autoload -U compinit && compinit";
+  };
+
   programs.git = {
     enable = true;
     userEmail = "edward@edwardijk.nl";
@@ -43,8 +50,16 @@
 
   programs.fzf = {
     enable = true;
+    enableZshIntegration = true;
+    enableBashIntegration = true;
   };
- 
+
+  programs.starship = {
+    enable = true;
+    enableZshIntegration = true;
+    enableBashIntegration = true;
+  };
+
   programs.lazygit = {
     enable = true;
   };

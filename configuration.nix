@@ -98,6 +98,7 @@
      extraGroups = [ "wheel" "input" ]; # Enable ‘sudo’ for the user.
      description = "Edward Dijk";
      hashedPassword = "$6$zwpADXuBZW.TrsZc$k82uFvhoeJ9/ir.ktaXo09CtJYYcfQTEFuBpdEaYepWvlxteRjO6w0KhphKbjBmM04xTXu7d9izGTSlUzr3ZK/";
+     shell = pkgs.zsh;
   #   packages = with pkgs; [
   #     firefox
   #     tree
@@ -119,6 +120,7 @@
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
+  programs.zsh.enable = true;
   programs.mtr.enable = true;
   programs.gnupg.agent = {
     enable = true;
