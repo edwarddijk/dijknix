@@ -55,11 +55,10 @@
   	enable = true;
 	};
 
-  # services.tlp.enable = true;
   services.chrony.enable = true;
   services.ntp.enable = false;
   services.fstrim.enable = true;
-
+  services.power-profiles-daemon.enable = true;
   services.fwupd = {
     enable = true;
     extraRemotes = [ "lvfs-testing" ];
