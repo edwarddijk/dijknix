@@ -52,9 +52,6 @@
   services.ntp.enable = false;
   services.fstrim.enable = true;
 
-  # Enable QEMU Guest Agent
-  services.qemuGuest.enable = true;
-
   services.fwupd = {
     enable = true;
     extraRemotes = [ "lvfs-testing" ];
@@ -75,7 +72,6 @@
     jack.enable = true;
   };
 
-  sound.enable = true;
   hardware.pulseaudio.enable = false;
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -102,8 +98,6 @@
   # OpenGL
   hardware.opengl = {
     enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
   };
 
   # Some programs need SUID wrappers, can be configured further or are
