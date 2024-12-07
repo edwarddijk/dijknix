@@ -63,21 +63,21 @@
 
   programs.home-manager.enable = true;
   
-  qt.enable = true;
-  qt.platformTheme.name = "gtk";
-  qt.style.name = "arc-dark";
-  qt.style.package = pkgs.arc-kde-theme;
-
-
-  gtk.enable = true;
-  gtk.theme = {
-    name = "Arc-Dark";
-    package = pkgs.arc-theme;
-  };
-
-  gtk.iconTheme = {
-    name = "Arc";
-    package = pkgs.arc-icon-theme;
-  };
-
+#  qt.enable = true;
+#  qt.platformTheme.name = "gtk";
+#  qt.style.name = "arc-dark";
+#  qt.style.package = pkgs.arc-kde-theme;
+#
+#
+#  gtk.enable = true;
+#  gtk.theme = {
+#    name = "Arc-Dark";
+#    package = pkgs.arc-theme;
+#  };
+#
+#  gtk.iconTheme = {
+#    name = "Arc";
+#    package = pkgs.arc-icon-theme;
+#  };
+#
 }

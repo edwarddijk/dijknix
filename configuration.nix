@@ -42,6 +42,9 @@
 
   xdg.portal = {
   	enable = true;
+	extraPortals = with pkgs; [
+    		xdg-desktop-portal-kde
+  	];
   };
 
   security.sudo.wheelNeedsPassword = true;
@@ -137,6 +140,8 @@
       X11Forwarding = false;
     };
   };
+
+  systemd.coredump.enable = false;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
