@@ -22,7 +22,7 @@
  
   programs.neovim = {
     enable = true;
-  }
+  };
 
   programs.kitty = {
     enable = true;
