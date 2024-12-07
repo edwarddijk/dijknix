@@ -19,10 +19,14 @@
     mouse = true;
     plugins = [ pkgs.tmuxPlugins.gruvbox ];
   };
+ 
+  programs.neovim = {
+    enable = true;
+  }
 
   programs.kitty = {
     enable = true;
-    theme = "Gruvbox Dark";
+    themeFile = "GruvboxMaterialDarkMedium";
   };
 
   programs.lsd = {
