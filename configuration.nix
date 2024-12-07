@@ -47,7 +47,7 @@
   	defaultSession = "plasma";
 	sddm = {
 		enable = true;
-		}:
+		};
 	};
 
   services.desktopManager.plasma6 = {
