@@ -5,6 +5,7 @@
 	home.stateVersion = "23.11";
 	home.packages = with pkgs; [
    		w3m
+		kubectl
   	];
 
   programs.zsh = {
@@ -26,7 +27,17 @@
     mouse = true;
     plugins = [ pkgs.tmuxPlugins.gruvbox ];
   };
- 
+
+  programs.k9s = {
+    enable = true;
+    settings = {
+    	k9s = {
+    		skins = "gruvebox-dark";
+    	};
+    };
+  };
+  
+
   programs.neovim = {
     enable = true;
   };
