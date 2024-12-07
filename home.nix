@@ -6,6 +6,7 @@
 	home.packages = with pkgs; [
    		w3m
 		kubectl
+		duf
   	];
 
   programs.zsh = {
