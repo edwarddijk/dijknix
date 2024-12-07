@@ -40,6 +40,10 @@
      keyMap = "us";
   };
 
+  xdg.portal = {
+  	enable = true;
+  };
+
   security.sudo.wheelNeedsPassword = true;
 
   services.xserver.enable = true;  
