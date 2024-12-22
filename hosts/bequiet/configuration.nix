@@ -82,6 +82,7 @@
   services.ntp.enable = false;
   services.fstrim.enable = true;
   services.power-profiles-daemon.enable = true;
+  services.psd.enable = true;
   services.fwupd = {
     enable = true;
     extraRemotes = [ "lvfs-testing" ];
