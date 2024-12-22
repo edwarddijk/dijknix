@@ -14,7 +14,7 @@
       	    system = "x86_64-linux";
 	    modules = [
 	    	    inputs.nixos-facter-modules.nixosModules.facter
-                    { config.facter.reportPath = ./facter.json; }
+                    { config.facter.reportPath = ./hosts/bequiet/facter.json; }
 	    	    ./hosts/bequiet/bequiet.nix
 		    ./hosts/bequiet/configuration.nix
 		    home-manager.nixosModules.home-manager
