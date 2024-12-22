@@ -9,11 +9,11 @@
 
   outputs = inputs@{ nixpkgs, home-manager, ... }: {
     nixosConfigurations = {
-	    dijkstation  = inputs.nixpkgs.lib.nixosSystem {
+	    bequiet  = inputs.nixpkgs.lib.nixosSystem {
       	    system = "x86_64-linux";
 	    modules = [
-	    	    ./hardware/dijkstation.nix
-		    ./configuration.nix
+	    	    ./hosts/bequiet/bequiet.nix
+		    ./hosts/bequiet/configuration.nix
 		    home-manager.nixosModules.home-manager
 		    {
 		      home-manager.useGlobalPkgs = true;
