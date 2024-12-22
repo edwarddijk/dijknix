@@ -77,7 +77,8 @@
       flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
     '';
   };
-
+  
+  services.acpid.enable = true;
   services.chrony.enable = true;
   services.ntp.enable = false;
   services.fstrim.enable = true;
