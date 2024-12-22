@@ -90,7 +90,7 @@
 
   programs.wofi.enable = true;
   programs.waybar.enable = true;
-  services.swaync.enable = true:
+  services.swaync.enable = true;
 
 
   programs.home-manager.enable = true;
