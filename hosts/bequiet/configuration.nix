@@ -56,7 +56,7 @@
 
   services.xserver.enable = true;  
   services.displayManager = {
-  	defaultSession = "plasma";
+  	defaultSession = "hyprland";
 	sddm = {
 		enable = true;
 		wayland.enable = true;
