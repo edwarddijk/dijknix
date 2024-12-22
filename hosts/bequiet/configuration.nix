@@ -7,6 +7,7 @@
 {
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.configurationLimit = 10;
   boot.loader.efi.canTouchEfiVariables = true;
   
   boot.tmp = {
@@ -91,6 +92,7 @@
   services.chrony.enable = true;
   services.ntp.enable = false;
   services.fstrim.enable = true;
+  services.smartd.enable = true;
   services.power-profiles-daemon.enable = true;
   services.psd.enable = true;
   services.fwupd = {

@@ -7,6 +7,7 @@
    		w3m
 		kubectl
 		duf
+		nwg-displays
   	];
   
   programs.zsh = {
