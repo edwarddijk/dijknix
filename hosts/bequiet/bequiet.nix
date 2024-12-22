@@ -16,7 +16,7 @@
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/f7f0f34b-2586-4f96-a112-c072f13f82d1";
       fsType = "btrfs";
-      options = [ "subvol=@" ];
+      options = [ "subvol=@" "noatime" "compress=zstd" ];
     };
 
   boot.initrd.luks.devices."ROOT".device = "/dev/disk/by-uuid/91875fbd-9b4b-4ed8-8ae1-cacbe9003c16";
@@ -30,25 +30,19 @@
   fileSystems."/home" =
     { device = "/dev/disk/by-uuid/f7f0f34b-2586-4f96-a112-c072f13f82d1";
       fsType = "btrfs";
-      options = [ "subvol=@home" ];
+      options = [ "subvol=@home" "noatime" "compress=zstd" ];
     };
 
   fileSystems."/var" =
     { device = "/dev/disk/by-uuid/f7f0f34b-2586-4f96-a112-c072f13f82d1";
       fsType = "btrfs";
-      options = [ "subvol=@var" ];
-    };
-
-  fileSystems."/tmp" =
-    { device = "/dev/disk/by-uuid/f7f0f34b-2586-4f96-a112-c072f13f82d1";
-      fsType = "btrfs";
-      options = [ "subvol=@tmp" ];
+      options = [ "subvol=@var" "noatime" "compress=zstd" ];
     };
 
   fileSystems."/.snapshots" =
     { device = "/dev/disk/by-uuid/f7f0f34b-2586-4f96-a112-c072f13f82d1";
       fsType = "btrfs";
-      options = [ "subvol=@.snapshots" ];
+      options = [ "subvol=@.snapshots" "noatime" "compress=zstd" ];
     };
 
   swapDevices =
