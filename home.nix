@@ -1,4 +1,4 @@
-{ pkgs, lib, config,... }:
+{ pkgs, lib, config, stylix, ... }:
 {	
 	home.username = "edward";
 	home.homeDirectory = "/home/edward";
@@ -8,7 +8,7 @@
 		kubectl
 		duf
   	];
-
+  
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -26,16 +26,10 @@
     enable = true;
     clock24 = true;
     mouse = true;
-    plugins = [ pkgs.tmuxPlugins.gruvbox ];
   };
 
   programs.k9s = {
     enable = true;
-    settings = {
-    	k9s = {
-    		skins = "gruvebox-dark";
-    	};
-    };
   };
   
 
@@ -45,7 +39,6 @@
 
   programs.kitty = {
     enable = true;
-    themeFile = "GruvboxMaterialDarkMedium";
   };
 
   programs.lsd = {
@@ -55,9 +48,6 @@
 
   programs.bat = {
     enable = true;
-    config = {
-      theme = "gruvbox-dark";
-    };
   };
 
   programs.fzf = {
@@ -79,7 +69,6 @@
   programs.btop = {
     enable = true;
     settings = {
-      color_theme = "gruvbox_dark";
       theme_background = false;
     };
   };
@@ -91,6 +80,9 @@
   programs.wofi.enable = true;
   programs.waybar.enable = true;
   services.swaync.enable = true;
+  services.hyprpaper.enable = true;
+  services.hypridle.enable = true;
+  programs.hyprlock.enable = true;
 
 
   programs.home-manager.enable = true;

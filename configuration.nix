@@ -47,6 +47,11 @@
   	];
   };
 
+  stylix.enable = true;
+  stylix.autoEnable = true;
+  stylix.image = ./41.png;
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml"; 
+  
   security.sudo.wheelNeedsPassword = true;
 
   services.xserver.enable = true;  

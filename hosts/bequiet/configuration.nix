@@ -52,6 +52,15 @@
   	];
   };
 
+  stylix.enable = true;
+  stylix.autoEnable = true;
+  stylix.image = pkgs.fetchurl {
+    url = "https://raw.githubusercontent.com/ChrisTitusTech/nord-background/refs/heads/main/41.png";
+    sha256 = "2a68ce8b7ee45b73d42d47543038848622b09e18d22ab98f79ccd210445297e9";
+    };
+
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml"; 
+  
   security.sudo.wheelNeedsPassword = true;
 
   services.xserver.enable = true;  
