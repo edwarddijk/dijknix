@@ -63,11 +63,11 @@
 		};
 	};
 
-  services.desktopManager.plasma6 = {
-  	enable = true;
-	enableQt5Integration = true;
-	};
-
+#  services.desktopManager.plasma6 = {
+#  	enable = true;
+#	enableQt5Integration = true;
+#	};
+#
   services.flatpak.enable = true;
 
   systemd.services.flatpak-repo = {
@@ -133,6 +133,7 @@
     luarocks
     ripgrep
     system-config-printer
+    appimage-run
    ];
 
   # OpenGL
@@ -140,6 +141,10 @@
     enable = true;
     enable32Bit = true;
   };
+
+
+  # Hyprland
+  programs.hyprland.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
