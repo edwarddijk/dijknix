@@ -132,6 +132,7 @@
     gopls
     luarocks
     ripgrep
+    system-config-printer
    ];
 
   # OpenGL
