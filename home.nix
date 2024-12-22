@@ -88,6 +88,11 @@
     enable = true;
   };
 
+  programs.wofi.enable = true;
+  programs.waybar.enable = true;
+  services.swaync.enable = true:
+
+
   programs.home-manager.enable = true;
   
 #  qt.enable = true;
