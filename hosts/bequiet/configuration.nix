@@ -125,6 +125,11 @@
   environment.systemPackages = with pkgs; [
     dconf
     tpm2-tss
+    gcc
+    go
+    gopls
+    luarocks
+    ripgrep
    ];
 
   # OpenGL
