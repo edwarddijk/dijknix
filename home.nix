@@ -49,7 +49,21 @@
         "$mod, Q, exec, $terminal"
 	"$mod, R, exec, $menu"
 	"$mod, C, killactive,"
+	"$mod, M, exit,"
+	"$mod, E, exec, $filemanager"
+	"$mod, V, togglefloating"
+	"$mod, P, pseudo"
+	"$mod, J, togglesplit"
+	"$mod, W, exec, $webbrowser"
+	"$mod, L, exec, hyprlock"
+        
+	"$mod, left, movefocus, l"
+   	"$mod, right, movefocus, r"
+   	"$mod, up, movefocus, u"
+	"$mod, down, movefocus, d"
 
+	"$mod, S, togglespecialworkspace, magic"
+	"$mod SHIFT, S, movetoworkspace, special:magic"
       ];
 
       bindm = [
@@ -124,6 +138,10 @@
     settings = {
       theme_background = false;
     };
+  };
+
+  programs.fastfetch = {
+    enable = true;
   };
 
   programs.firefox = {
