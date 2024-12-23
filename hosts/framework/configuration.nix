@@ -138,7 +138,7 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
-
+  services.blueman.enable = true;
   # Enable sound.
   security.rtkit.enable = true;
   services.pipewire = {
@@ -150,9 +150,10 @@
   };
 
   hardware.pulseaudio.enable = false;
+  hardware.bluetooth.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
+   services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.edward = {
