@@ -25,6 +25,9 @@
 		lmstudio
 		pandoc
   	];
+	home.shellAliases = {
+	  "cat" = "bat";
+	};
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -144,6 +147,9 @@
     enableCompletion = true;
     autocd = true;
     completionInit = "autoload -U compinit && compinit";
+    autosuggestion.enable = true;
+    history.ignoreAllDups = true;
+    history.ignoreSpace = true;
   };
 
   programs.git = {
@@ -165,6 +171,33 @@
 
   programs.neovim = {
     enable = true;
+    viAlias = true;
+    vimAlias = true;
+    defaultEditor = true;
+    extraLuaConfig = ''
+      vim.g.mapleader = ' '
+      vim.g.maplocalleader = ' '
+      vim.g.have_nerd_font = true
+
+      local opt=vim.opt
+
+         opt.relativenumber = true
+         opt.wrap = false
+         opt.mouse = 'a'
+         opt.showmode = false
+         opt.breakindent = true
+         opt.undofile = true
+         opt.ignorecase = true
+         opt.smartcase = true
+
+         opt.signcolumn = 'yes'
+         opt.updatetime = 350
+
+        opt.timeoutlen = 300
+
+        opt.cursorline = true
+        opt.scrolloff = 10
+    '';
   };
 
   programs.kitty = {
