@@ -32,7 +32,26 @@
 		    }
 	            ];
             };
-
+	    framework  = inputs.nixpkgs.lib.nixosSystem {
+      	    system = "x86_64-linux";
+	    specialArgs = { inherit inputs; };
+	    modules = [
+	    	    inputs.nixos-facter-modules.nixosModules.facter
+                    { config.facter.reportPath = ./hosts/framework/facter.json; }
+	    	    ./hosts/framework/framework.nix
+		    ./hosts/framework/configuration.nix
+                    stylix.nixosModules.stylix
+		    home-manager.nixosModules.home-manager
+		    {
+		      home-manager.useGlobalPkgs = true;
+		      home-manager.useUserPackages = true;
+		      home-manager.extraSpecialArgs = {
+                        inherit inputs;
+                      };
+		      home-manager.users.edward = import ./home.nix;
+		    }
+	            ];
+            };
 	    proxmox  = inputs.nixpkgs.lib.nixosSystem {
       	    system = "x86_64-linux";
 	    modules = [ 

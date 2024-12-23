@@ -17,7 +17,7 @@
     tmpfsSize = "50%";
   };
 
-  networking.hostName = "DijkNix"; # Define your hostname.
+  networking.hostName = "DijkLaptop"; # Define your hostname.
   networking.enableIPv6 = false;
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -181,6 +181,8 @@
     appimage-run
     pavucontrol
     playerctl
+    framework-tool
+    brightnessctl
    ];
 
   # OpenGL
