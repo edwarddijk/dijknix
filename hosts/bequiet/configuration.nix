@@ -96,19 +96,6 @@
   security.sudo.wheelNeedsPassword = true;
 
   services.xserver.enable = true;  
-  #services.displayManager = {
-  #	defaultSession = "hyprland";
-  #	sddm = {
-  #		enable = true;
- #		wayland.enable = true;
-#		};
-#	};
-
-#  services.desktopManager.plasma6 = {
-#  	enable = true;
-#	enableQt5Integration = true;
-#	};
-#
   services.greetd = {
       enable = true;
       vt = 3;
