@@ -181,6 +181,8 @@
     appimage-run
     pavucontrol
     playerctl
+    rocmPackages.rocminfo
+    nvtop
    ];
 
   # OpenGL
