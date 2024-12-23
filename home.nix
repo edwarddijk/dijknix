@@ -19,6 +19,7 @@
 		streamcontroller
 		qt6ct
 		pcmanfm
+		spotify
   	];
 
   wayland.windowManager.hyprland = {
