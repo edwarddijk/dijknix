@@ -29,7 +29,7 @@
     settings = {
 
       "$terminal" = "kitty";
-      "$fileManager" = "pcmanfm";
+      "$filemanager" = "pcmanfm";
       "$menu" = "wofi --show drun";
       "$webbrowser" = "firefox";
 
