@@ -17,7 +17,9 @@
 		nerd-fonts.fira-mono
 		kdePackages.dolphin
 		kdePackages.okular
+		streamcontroller
 		qt6ct
+		pcmanfm
   	];
 
   wayland.windowManager.hyprland = {
