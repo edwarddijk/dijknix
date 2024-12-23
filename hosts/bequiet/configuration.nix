@@ -16,6 +16,7 @@
   };
 
   networking.hostName = "DijkNix"; # Define your hostname.
+  networking.enableIPv6 = false;
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
@@ -49,19 +50,16 @@
   xdg.portal = {
   	enable = true;
 	extraPortals = with pkgs; [
-    		xdg-desktop-portal-kde
+    		xdg-desktop-portal-gtk
   	];
   };
 
-  stylix.enable = true;
-  stylix.autoEnable = true;
-  stylix.image = pkgs.fetchurl {
-    url = "https://raw.githubusercontent.com/ChrisTitusTech/nord-background/refs/heads/main/41.png";
-    sha256 = "2a68ce8b7ee45b73d42d47543038848622b09e18d22ab98f79ccd210445297e9";
-    };
+  stylix = {
+    enable = false;
+    image = ./41.png;
+    homeManagerIntegration.autoImport = true;
+   };
 
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml"; 
-  
   security.sudo.wheelNeedsPassword = true;
 
   services.xserver.enable = true;  
@@ -123,7 +121,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.edward = {
      isNormalUser = true;
-     extraGroups = [ "wheel" "input" ]; # Enable ‘sudo’ for the user.
+     extraGroups = [ "wheel" "input" "video" "gamemode" ]; # Enable ‘sudo’ for the user.
      description = "Edward Dijk";
      hashedPassword = "$6$zwpADXuBZW.TrsZc$k82uFvhoeJ9/ir.ktaXo09CtJYYcfQTEFuBpdEaYepWvlxteRjO6w0KhphKbjBmM04xTXu7d9izGTSlUzr3ZK/";
      shell = pkgs.zsh;
@@ -160,6 +158,9 @@
   
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
+  programs.gamemode.enable = true;
+  programs._1password.enable = true;
+  programs._1password-gui.enable = true;
   programs.zsh.enable = true;
   programs.mtr.enable = true;
   programs.gnupg.agent = {
