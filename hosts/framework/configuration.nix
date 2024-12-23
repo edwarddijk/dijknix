@@ -86,7 +86,7 @@
       };
       sizes = {
         applications = 12;
-        terminal = 12;
+        terminal = 14;
         desktop = 11;
         popups = 12;
       };
@@ -125,6 +125,7 @@
   services.acpid.enable = true;
   services.chrony.enable = true;
   services.ntp.enable = false;
+  services.thermald.enable = true;
   services.fstrim.enable = true;
   services.smartd.enable = true;
   services.power-profiles-daemon.enable = true;
@@ -184,6 +185,7 @@
     playerctl
     framework-tool
     brightnessctl
+    pamixer
    ];
 
   # OpenGL
