@@ -179,6 +179,8 @@
     ripgrep
     system-config-printer
     appimage-run
+    pavucontrol
+    playerctl
    ];
 
   # OpenGL

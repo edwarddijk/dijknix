@@ -15,7 +15,6 @@
 		noto-fonts-color-emoji
 		font-awesome
 		nerd-fonts.fira-mono
-		kdePackages.dolphin
 		kdePackages.okular
 		streamcontroller
 		qt6ct
