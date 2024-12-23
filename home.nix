@@ -21,8 +21,27 @@
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml"; 
   };
  
-  wayland.windowManager.hyprland.enable = true;
-  wayland.windowManager.hyprland.xwayland.enable = true;
+  wayland.windowManager.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+    systemd.enable = true;
+    settings = {
+     decoration = {
+      shadow_offset = "0 5";
+      "col.shadow" = "rgba(00000099)";
+    };
+
+    "$mod" = "SUPER";
+
+    bindm = [
+      # mouse movements
+      "$mod, mouse:272, movewindow"
+      "$mod, mouse:273, resizewindow"
+      "$mod ALT, mouse:272, resizewindow"
+    ];
+   };
+  };
+
 
   programs.zsh = {
     enable = true;
