@@ -195,6 +195,8 @@
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   programs.gamemode.enable = true;
+  programs.gamescope.enable = true;
+  programs.steam.enable = true;
   programs._1password.enable = true;
   programs._1password-gui.enable = true;
   programs.zsh.enable = true;

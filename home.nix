@@ -8,6 +8,7 @@
 		kubectl
 		duf
 		nwg-displays
+		lutris
   	];
   
 
@@ -43,6 +44,11 @@
         rounding = 10;
       };
 
+      
+      exec-once = [
+        "dbus-update-activation-environment --systemd --all"
+        "waybar"
+      ];
 
       "$mod" = "SUPER";
       bind = [
