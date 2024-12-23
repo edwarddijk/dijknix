@@ -24,6 +24,7 @@
 		speedtest-cli
 		lmstudio
 		pandoc
+		solaar
   	];
 	home.shellAliases = {
 	  "cat" = "bat";

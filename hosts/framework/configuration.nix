@@ -191,6 +191,8 @@
     iwd
     wavemon
     smartmontools
+    lm_sensors
+    iotop
    ];
 
   # OpenGL
