@@ -14,6 +14,10 @@
 		pwgen
 		noto-fonts-color-emoji
 		font-awesome
+		nerd-fonts.fira-mono
+		kdePackages.dolphin
+		kdePackages.okular
+		qt6ct
   	];
 
   wayland.windowManager.hyprland = {
@@ -23,7 +27,7 @@
     settings = {
 
       "$terminal" = "kitty";
-      "$fileManager" = "dolphin";
+      "$fileManager" = "pcmanfm";
       "$menu" = "wofi --show drun";
       "$webbrowser" = "firefox";
 
@@ -42,7 +46,11 @@
         rounding = 10;
       };
 
-      
+      env = [
+       "QT_QPA_PLATFORM,wayland"
+       "QT_QPA_PLATFORMTHEME,qt6ct"
+      ];
+
       exec-once = [
         "dbus-update-activation-environment --systemd --all"
         "waybar"
@@ -164,21 +172,28 @@
 
   programs.home-manager.enable = true;
   
-#  qt.enable = true;
-#  qt.platformTheme.name = "gtk";
-#  qt.style.name = "arc-dark";
-#  qt.style.package = pkgs.arc-kde-theme;
+  qt.enable = true;
+  qt.platformTheme.name = "gtk3";
+  qt.style.name = "arc-dark";
+  qt.style.package = pkgs.arc-kde-theme;
 #
 #
 #  gtk.enable = true;
 #  gtk.theme = {
-#    name = "Arc-Dark";
+#   name = "Arc-Dark";
 #    package = pkgs.arc-theme;
-#  };
-#
-#  gtk.iconTheme = {
-#    name = "Arc";
-#    package = pkgs.arc-icon-theme;
-#  };
-#
+#  };  
+  gtk = {
+    gtk3.extraConfig = {
+      gtk-application-prefer-dark-theme = 1;
+    };
+    gtk4.extraConfig = {
+      gtk-application-prefer-dark-theme = 1;
+    };
+
+    iconTheme = {
+      name = "Arc";
+      package = pkgs.arc-icon-theme;
+    };
+  };
 }

@@ -73,8 +73,8 @@
     cursor.size = 24;
     fonts = {
       monospace = {
-        package = pkgs.nerd-fonts.jetbrains-mono;
-        name = "JetBrainsMono Nerd Font Mono";
+        package = pkgs.nerd-fonts.fira-mono;
+        name = "FiraMono Nerd Font";
       };
       sansSerif = {
         package = pkgs.montserrat;
@@ -86,7 +86,7 @@
       };
       sizes = {
         applications = 12;
-        terminal = 15;
+        terminal = 12;
         desktop = 11;
         popups = 12;
       };
