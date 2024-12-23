@@ -26,19 +26,38 @@
     xwayland.enable = true;
     systemd.enable = true;
     settings = {
-     decoration = {
-      shadow_offset = "0 5";
-      "col.shadow" = "rgba(00000099)";
-    };
 
-    "$mod" = "SUPER";
+      "$terminal" = "kitty";
+      "$fileManager" = "dolphin";
+      "$menu" = "wofi --show drun";
+      "$webbrowser" = "firefox";
 
-    bindm = [
-      # mouse movements
-      "$mod, mouse:272, movewindow"
-      "$mod, mouse:273, resizewindow"
-      "$mod ALT, mouse:272, resizewindow"
-    ];
+      general = {
+        gaps_in = 5;
+	gaps_out = 5;
+	border_size = 2;
+	layout = "dwindle";
+      };
+      
+      decoration = {
+        rounding = 10;
+      };
+
+
+      "$mod" = "SUPER";
+      bind = [
+        "$mod, Q, exec, $terminal"
+	"$mod, R, exec, $menu"
+	"$mod, C, killactive,"
+
+      ];
+
+      bindm = [
+        # mouse movements
+        "$mod, mouse:272, movewindow"
+        "$mod, mouse:273, resizewindow"
+        "$mod ALT, mouse:272, resizewindow"
+      ];
    };
   };
 
