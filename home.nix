@@ -37,6 +37,10 @@
         "~/.config/hypr/monitors.conf"
 	"~/.config/hypr/workspaces.conf"
       ];
+      
+      xwayland = {
+        force_zero_scaling = true;
+      };
 
       general = {
         gaps_in = 5;
