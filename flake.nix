@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    hyprland.url = "github:hyprwm/Hyprland";
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nixos-facter-modules.url = "github:numtide/nixos-facter-modules";
@@ -13,6 +14,7 @@
     nixosConfigurations = {
 	    bequiet  = inputs.nixpkgs.lib.nixosSystem {
       	    system = "x86_64-linux";
+	    specialArgs = { inherit inputs; };
 	    modules = [
 	    	    inputs.nixos-facter-modules.nixosModules.facter
                     { config.facter.reportPath = ./hosts/bequiet/facter.json; }

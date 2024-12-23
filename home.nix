@@ -33,6 +33,10 @@
 	border_size = 2;
 	layout = "dwindle";
       };
+
+      misc = {
+        disable_hyprland_qtutils_check = true;
+      };
       
       decoration = {
         rounding = 10;
