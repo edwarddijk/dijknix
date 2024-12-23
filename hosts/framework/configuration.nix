@@ -22,6 +22,7 @@
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.networkmanager.wifi.backend = "iwd";
   networking.timeServers = [ "nl.pool.ntp.org" ];
 
   # Set your time zone.
@@ -152,6 +153,7 @@
 
   hardware.pulseaudio.enable = false;
   hardware.bluetooth.enable = true;
+  hardware.wirelessRegulatoryDatabase = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
    services.xserver.libinput.enable = true;
@@ -186,6 +188,9 @@
     framework-tool
     brightnessctl
     pamixer
+    iwd
+    wavemon
+    smartmontools
    ];
 
   # OpenGL

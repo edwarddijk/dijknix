@@ -20,6 +20,10 @@
 		qt6ct
 		pcmanfm
 		spotify
+		popeye
+		speedtest-cli
+		lmstudio
+		pandoc
   	];
 
   wayland.windowManager.hyprland = {
