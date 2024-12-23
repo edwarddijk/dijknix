@@ -9,6 +9,9 @@
 		duf
 		nwg-displays
 		lutris
+		calc
+		bc
+		pwgen
   	];
   
 
