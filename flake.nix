@@ -6,7 +6,6 @@
     hyprland.url = "github:hyprwm/Hyprland";
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    nixos-facter-modules.url = "github:numtide/nixos-facter-modules";
     stylix.url = "github:danth/stylix";
     };
 
@@ -16,8 +15,6 @@
       	    system = "x86_64-linux";
 	    specialArgs = { inherit inputs; };
 	    modules = [
-	    	    inputs.nixos-facter-modules.nixosModules.facter
-                    { config.facter.reportPath = ./hosts/bequiet/facter.json; }
 	    	    ./hosts/bequiet/bequiet.nix
 		    ./hosts/bequiet/configuration.nix
                     stylix.nixosModules.stylix

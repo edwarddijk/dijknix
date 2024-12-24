@@ -9,6 +9,8 @@
   imports = [
     ../../modules
   ];
+  
+  ollama.enable = true;
 
   networking.hostName = "DijkNix"; # Define your hostname.
   
