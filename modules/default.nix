@@ -1,8 +1,9 @@
-{ pkgs,lib, ... }: {
+{ pkgs, lib, config, ... }: {
 
   imports = [
     ./ollama.nix
     ./bluetooth.nix
+    ./wireless.nix
   ];
 
 

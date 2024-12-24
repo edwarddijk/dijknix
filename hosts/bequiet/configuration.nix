@@ -3,18 +3,23 @@
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
 { config, lib, pkgs, ... }:
-
+let
+  hostName = "DijkNix";
+  userName = "edward";
+in
 {
 
   imports = [
     ../../modules
   ];
-  
+ 
+  # Options
   ollama.enable = true;
   bluetooth.enable = false;
+  wireless.enable = false;
 
 
-  networking.hostName = "DijkNix"; # Define your hostname.
+  networking.hostName = hostName; # Define your hostname.
   
   services.printing.enable = true;
 
@@ -34,7 +39,7 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.edward = {
+  users.users.${userName} = {
      isNormalUser = true;
      extraGroups = [ "wheel" "input" "video" "gamemode" ]; # Enable ‘sudo’ for the user.
      description = "Edward Dijk";
