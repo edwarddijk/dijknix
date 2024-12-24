@@ -17,6 +17,8 @@ in
   ollama.enable = false;
   bluetooth.enable = true;
   wireless.enable = true;
+  intel.enable = true;
+  amd.enable = false;
 
 
   networking.hostName = hostName; # Define your hostname.
@@ -65,8 +67,6 @@ in
     appimage-run
     pavucontrol
     playerctl
-    rocmPackages.rocminfo
-    nvtopPackages.amd
    ];
 
   # OpenGL

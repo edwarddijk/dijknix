@@ -4,6 +4,8 @@
     ./ollama.nix
     ./bluetooth.nix
     ./wireless.nix
+    ./intel.nix
+    ./amd.nix
   ];
 
 
