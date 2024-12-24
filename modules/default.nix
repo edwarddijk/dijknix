@@ -1,7 +1,36 @@
-{ ... }: {
+{ pkgs,lib, ... }: {
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.configurationLimit = 10;
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.initrd.systemd.enable = true;
+  boot.plymouth.enable = true;  
+  boot.kernelParams = [ "quiet" "splash" "loglevel=3" ];
+  
+  boot.tmp = {
+    useTmpfs = true;
+    tmpfsSize = "50%";
+  };
 
+  nix = {
+      gc = {
+        automatic = true;
+        dates = "weekly";
+        options = "--delete-older-than 7d";
+      };
+      package = pkgs.nix;
+      settings = {
+        auto-optimise-store = true;
+        experimental-features = [ "nix-command" "flakes" ];
+        substituters = ["https://hyprland.cachix.org"];
+        trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+      };
+  };
+
+  networking.enableIPv6 = false;
+  networking.networkmanager.enable = true; 
+  networking.timeServers = [ "nl.pool.ntp.org" ];
+  
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
     LC_TIME = "nl_NL.UTF-8";
@@ -57,3 +86,53 @@
   };
 
   security.sudo.wheelNeedsPassword = true;
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+    ];
+    config.common.default = [ "gtk" ];
+  };
+
+  services.flatpak.enable = true;
+  systemd.services.flatpak-repo = {
+    wantedBy = [ "multi-user.target" ];
+    path = [ pkgs.flatpak ];
+    script = ''
+      flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+    '';
+  };
+  
+  services.acpid.enable = true;
+  services.chrony.enable = true;
+  services.ntp.enable = false;
+  services.fstrim.enable = true;
+  services.smartd.enable = true;
+  services.power-profiles-daemon.enable = true;
+  services.psd.enable = true;
+  services.fwupd = {
+    enable = true;
+    extraRemotes = [ "lvfs-testing" ];
+  };
+  services.xserver.xkb.layout = "us";
+  services.xserver.xkb.options = "eurosign:e,caps:escape";
+
+  services.openssh = {
+    enable = true;
+    openFirewall = true;
+    settings = {
+      PermitRootLogin = "no";
+      X11Forwarding = false;
+    };
+  };
+
+  systemd.coredump.enable = false;
+
+  networking.firewall.enable = true;
+  nixpkgs.config.allowUnfree = true;
+  
+  system.autoUpgrade.enable = true;
+  system.autoUpgrade.allowReboot = true;
+  system.stateVersion = "23.11"; 
+}
