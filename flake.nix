@@ -33,8 +33,6 @@
       	    system = "x86_64-linux";
 	    specialArgs = { inherit inputs; };
 	    modules = [
-	    	    inputs.nixos-facter-modules.nixosModules.facter
-                    { config.facter.reportPath = ./hosts/framework/facter.json; }
 	    	    ./hosts/framework/framework.nix
 		    ./hosts/framework/configuration.nix
                     stylix.nixosModules.stylix
