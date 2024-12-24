@@ -45,7 +45,7 @@
   };
 
   console = {
-     font = "Lat2-Terminus16";
+     font = "${pkgs.terminus_font}/share/consolefonts/ter-132n.psf.gz"; 
      keyMap = "us";
   };
 
