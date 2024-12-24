@@ -4,7 +4,7 @@
 
 { config, lib, pkgs, ... }:
 let
-  hostName = "DijkNix";
+  hostName = "DijkLaptop";
   userName = "edward";
 in
 {
@@ -17,6 +17,8 @@ in
   ollama.enable = true;
   bluetooth.enable = false;
   wireless.enable = false;
+  intel.enable = false;
+  amd.enable = true;
 
 
   networking.hostName = hostName; # Define your hostname.
@@ -65,8 +67,6 @@ in
     appimage-run
     pavucontrol
     playerctl
-    rocmPackages.rocminfo
-    nvtopPackages.amd
    ];
 
   # OpenGL
